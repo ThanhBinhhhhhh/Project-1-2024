@@ -1,0 +1,98 @@
+.header .container-flud {
+    background-color: grey;
+    padding: 0; /* Xóa padding thừa nếu có */
+    margin: 0 auto; /* Căn giữa và xóa margin thừa */
+    max-width: 100%; /* Đảm bảo không vượt quá chiều rộng */
+    overflow-x: hidden; /* Ẩn bất kỳ nội dung nào vượt ra ngoài */
+    
+}
+.header .container-flud a img {
+    width: 150px;
+    height: 120px;
+    padding: 20px 20px;
+}
+
+.body {
+    display: grid;
+    grid-template-columns: 150px 1fr; /* Slider có độ rộng 150px, main chiếm phần còn lại */
+}
+
+.body .slider .menu {
+    color: black;
+    text-align: center;
+    border-bottom: solid black 2px;
+}
+
+.body .slider {
+    background-color: grey;
+    scroll-behavior: smooth;  /* cuộn mượt */
+    display: flex;
+    flex-direction: column; /* Căn theo chiều dọc */
+    width: 150px; /* Độ rộng của slider */
+    height: 1250px; /* Chiều cao của slider */
+    overflow-y: auto; /* Cuộn dọc nếu cần */
+    gap: 10px; /* Khoảng cách giữa các slide */
+}
+
+.body .slider .inner-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.body .slider .inner-menu ul li a {
+    color: black;
+}
+
+.body .slider .inner-menu ul li a:hover {
+    text-decoration: none;
+    color: orangered;
+}
+
+.body .slider .inner-menu li {
+    border-bottom: solid rgb(75, 59, 59) 2px;
+    padding: 10px 10px;
+}
+
+.body .main {
+    padding: 20px;
+    height: 600px;
+}
+
+/* alert  */
+[show-alert] {
+    position: fixed;
+    top: 130px;
+    right: 15px;
+    z-index: 9999;
+}
+
+[show-alert].alert-hidden {
+    animation-name: alert-hidden;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+@keyframes alert-hidden {
+    from {
+        right: 15px;
+    }
+    to {
+        right: -100%;
+        display: none;
+    }
+}
+
+[show-alert] [close-alert] {
+    background-color: rgb(230, 214, 214);
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    justify-items: center;
+    font-weight: 600;
+    border-radius: 45px;
+    cursor: pointer;
+}
+/* end alert  */
