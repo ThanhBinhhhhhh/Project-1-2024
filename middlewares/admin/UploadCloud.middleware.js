@@ -16,7 +16,7 @@ module.exports.upload =  (req, res, next) => {
                     if (result) {
                       resolve(result);
                     } else {
-                      reject(error);
+                      // reject(error);
                     }
                   }
                 );
